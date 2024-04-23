@@ -1,0 +1,15 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  background-color: rgb(206, 238, 238);
+}
+#canvasContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#myCanva {
+
+  border: 1px dotted black;
+}
