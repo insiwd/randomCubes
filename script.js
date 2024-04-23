@@ -1,6 +1,10 @@
 const canvas = document.getElementById("myCanva");
 const ctx = canvas.getContext("2d");
 
+let rect1 = document.getElementById("rect1");
+let rect2 = document.getElementById("rect2");
+let rect3 = document.getElementById("rect3");
+
 class Rectangle {
   constructor(color, posX, posY, larg, alt) {
     // gerando cores aleatorias > 0 - 256
@@ -25,6 +29,12 @@ function drawTriangle() {
   ctx.fill();
 }
 
+function drawCircle() {
+  ctx.beginPath();
+  ctx.arc(Math.floor(Math.random() * 15), Math.floor(Math.random() * 15), 50, 0, Math.PI * 2, true); // circle
+  ctx.stroke();
+}
+
 function draw() {
   const rects = [];
 
@@ -32,11 +42,19 @@ function draw() {
     rects.push(new Rectangle());
   }
 
-  rects.forEach(rect => {
+  rects.forEach((rect, index) => {
     ctx.fillStyle = rect.color;
     ctx.fillRect(rect.posX, rect.posY, rect.larg, rect.alt);
-    drawTriangle();
+    drawTriangle() * 3;
+    drawCircle();
+    getColor(rect, index + 1);
   });
 }
 
+function getColor(rect, index) {
+  document.getElementById(`rect${index}`).textContent = rect.color;
+  document.getElementById(`rect${index}`).style.color = rect.color;
+}
+
 draw();
+

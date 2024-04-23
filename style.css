@@ -6,10 +6,19 @@ body {
 #canvasContainer {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content:center;
   align-items: center;
 }
-#myCanva {
 
+#myCanva {
   border: 1px dotted black;
+}
+
+#textContainer > span{
+  font-size: 14px;
+}
+#textContainer {
+  background-color: hsl(180, 52%, 11%);
+  padding: 5px;
 }
